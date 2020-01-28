@@ -79,28 +79,28 @@ public class SuffixExtract implements DrillSimpleFunc {
 
       if (hostname != null) {
         byte[] hostBytes = hostname.getBytes();
-        buffer.reallocIfNeeded(hostBytes.length); 
+        buffer = buffer.reallocIfNeeded(hostBytes.length); 
         buffer.setBytes(0, hostBytes);
         mw.varChar("hostname").writeVarChar(0, hostBytes.length, buffer);
       }
 
       if (assigned != null) {
         byte[] assignBytes = assigned.getBytes();
-        buffer.reallocIfNeeded(assignBytes.length); 
+        buffer = buffer.reallocIfNeeded(assignBytes.length); 
         buffer.setBytes(0, assignBytes);
         mw.varChar("assigned").writeVarChar(0, assignBytes.length, buffer);
       }
 
       if (subdomain != null) {
         byte[] subBytes = subdomain.getBytes();
-        buffer.reallocIfNeeded(subBytes.length); 
+        buffer = buffer.reallocIfNeeded(subBytes.length); 
         buffer.setBytes(0, subBytes);
         mw.varChar("subdomain").writeVarChar(0, subBytes.length, buffer);
       }
 
       if (tld != null) {
         byte[] tldBytes = tld.getBytes();
-        buffer.reallocIfNeeded(tldBytes.length); 
+        buffer = buffer.reallocIfNeeded(tldBytes.length); 
         buffer.setBytes(0, tldBytes);
         mw.varChar("tld").writeVarChar(0, tldBytes.length, buffer);
       }
